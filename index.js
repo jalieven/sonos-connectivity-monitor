@@ -2,11 +2,12 @@
 const request = require('request');
 const cheerio = require('cheerio');
 const fs = require('fs');
+const path = require('path');
 const Parser = require('json2csv').Parser;
 
 const URL = 'http://192.168.2.37:1400/support/review';
 const INTERVAL = 30000;
-const FILENAME = 'sonos-connectivity.csv';
+const FILENAME = path.join(__dirname, '/sonos-connectivity.csv');
 const NEW_LINE = '\r\n';
 const FIELDS = ['timestamp', 'zone_name', 'ofdm_level', 'noise_floor'];
 
